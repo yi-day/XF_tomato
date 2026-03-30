@@ -1,15 +1,20 @@
 package tomato.dto.focus;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+/**
+ * 结束专注请求
+ */
 @Data
 public class FocusEndRequest {
 
-    @NotNull(message = "专注记录 ID 不能为空")
-    private Long focusRecordId;
+    /** 会话ID */
+    @NotBlank(message = "会话ID不能为空")
+    private String sessionId;
 
-    private Integer actualMinutes;
-
-    private Boolean interrupted;
+    /** 实际专注时长（分钟） */
+    @NotNull(message = "专注时长不能为空")
+    private Integer duration;
 }

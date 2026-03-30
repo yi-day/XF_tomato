@@ -2,9 +2,15 @@ package tomato.vo.focus;
 
 import lombok.Data;
 
+/**
+ * 今日专注统计视图对象
+ */
 @Data
 public class FocusTodayStatsVO {
 
-    private Integer focusCount;
-    private Integer focusMinutes;
+    /** 今日专注分钟数 */
+    private Integer todayMinutes;
+
+    /** 今日番茄数 */
+    private Integer todayPomodoros;
 }

@@ -1,20 +1,30 @@
 package tomato.dto.user;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+import java.time.LocalDate;
+
+/**
+ * 更新用户资料请求
+ */
 @Data
 public class UpdateProfileRequest {
 
-    @NotBlank(message = "昵称不能为空")
-    @Size(max = 20, message = "昵称长度不能超过 20 位")
-    private String nickname;
+    /** 真实姓名 */
+    private String name;
 
-    @Pattern(regexp = "^1\\d{10}$", message = "手机号格式不正确")
-    private String phone;
+    /** 出生日期 */
+    private LocalDate birthDate;
 
-    @Size(max = 100, message = "头像地址长度不能超过 100 位")
-    private String avatar;
+    /** 学校 */
+    private String school;
+
+    /** 专业 */
+    private String major;
+
+    /** 年级 */
+    private String grade;
+
+    /** 学科 */
+    private String subjects;
 }

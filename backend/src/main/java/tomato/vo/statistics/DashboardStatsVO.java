@@ -1,16 +1,25 @@
 package tomato.vo.statistics;
 
 import lombok.Data;
-import tomato.vo.focus.FocusTrendVO;
 
-import java.util.List;
-
+/**
+ * 仪表盘统计视图对象
+ */
 @Data
 public class DashboardStatsVO {
 
-    private Integer todayFocusCount;
+    /** 今日专注分钟数 */
     private Integer todayFocusMinutes;
-    private Integer completedTaskCount;
-    private Integer currentCheckInStreak;
-    private List<FocusTrendVO> weeklyFocusTrend;
+
+    /** 今日番茄数 */
+    private Integer todayPomodoros;
+
+    /** 周完成任务率 */
+    private String weekCompletionRate;
+
+    /** 连续签到天数 */
+    private Integer streakDays;
+
+    /** 高峰时段 */
+    private String peakPeriod;
 }

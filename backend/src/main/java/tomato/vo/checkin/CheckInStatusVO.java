@@ -2,13 +2,15 @@ package tomato.vo.checkin;
 
 import lombok.Data;
 
-import java.time.LocalDate;
-
+/**
+ * 签到状态视图对象
+ */
 @Data
 public class CheckInStatusVO {
 
+    /** 今日是否已签到 */
     private Boolean checkedIn;
-    private Integer currentStreak;
-    private Integer totalCheckInDays;
-    private LocalDate lastCheckInDate;
+
+    /** 连续签到天数 */
+    private Integer streakDays;
 }

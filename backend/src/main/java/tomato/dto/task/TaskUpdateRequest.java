@@ -1,20 +1,29 @@
 package tomato.dto.task;
 
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import java.time.LocalDate;
+
+/**
+ * 更新任务请求
+ */
 @Data
 public class TaskUpdateRequest {
 
+    /** 任务标题 */
     @NotBlank(message = "任务标题不能为空")
-    @Size(max = 50, message = "任务标题长度不能超过 50 位")
     private String title;
 
-    @Size(max = 255, message = "任务描述长度不能超过 255 位")
-    private String description;
+    /** 优先级: HIGH, MEDIUM, LOW */
+    @NotBlank(message = "优先级不能为空")
+    private String priority;
 
-    @Max(value = 600, message = "预估专注时长不能超过 600 分钟")
-    private Integer expectedFocusMinutes;
+    /** 预估番茄数 */
+    @NotNull(message = "预估番茄数不能为空")
+    private Integer estimatedPomodoros;
+
+    /** 截止日期 */
+    private LocalDate deadline;
 }
